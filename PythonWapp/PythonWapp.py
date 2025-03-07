@@ -7,11 +7,8 @@ from rxconfig import config
 
 class State(rx.State):
     """The app state."""
-    label = ''
-    def change_state(self):
-        self.label='welcome to Pashnnnly Electricals limited'
 
-
+    ...
 
 
 def index() -> rx.Component:
@@ -19,18 +16,17 @@ def index() -> rx.Component:
     return rx.container(
         rx.color_mode.button(position="top-right"),
         rx.vstack(
-            rx.heading(State.label, size="9"),
-            # rx.text(
-            #     "Get started by editing ",
-            #     rx.code(f"{config.app_name}/{config.app_name}.py"),
-            #     size="5",
-            # ),
-            rx.button("press me!!",on_click=State.change_state),
-            # rx.link(
-            #     rx.button("Check out our docs!"),
-            #     href="https://reflex.dev/docs/getting-started/introduction/",
-            #     is_external=True,
-            # ),
+            rx.heading("Welcome to Reflex!", size="9"),
+            rx.text(
+                "Get started by editing ",
+                rx.code(f"{config.app_name}/{config.app_name}.py"),
+                size="5",
+            ),
+            rx.link(
+                rx.button("Check out our docs!"),
+                href="https://reflex.dev/docs/getting-started/introduction/",
+                is_external=True,
+            ),
             spacing="5",
             justify="center",
             min_height="85vh",
